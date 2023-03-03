@@ -45,19 +45,27 @@ public class EmpDAO {
 		return result;
 	}
 	
-	public Map<String, Object> inputEmpInfo(){
+	//단건 등록
+	public int insertEmpInfo(Map<String, Object> map) {
 		connect();
-		String sql = "INSERT INTO employees (employee_id, first_name, last_name, hire_date, job_id, email )\r\n"
-				+ "VALUES(?,?,?,?,?,?)";
-		Map<String, Object> result = new HashMap<>();
+		String sql = "INSERT INTO employees (employee_id, email, hire_date, job_id, last_name)\r\n"
+				+ "VALUES(?,?,?,?,?)";
 		try {
 			PreparedStatement psmt = conn.prepareStatement(sql);
-			psmt.
+			psmt.setString(1, (String) map.get("eid"));
+			psmt.setString(2, (String) map.get("email"));
+			psmt.setString(3, (String) map.get("hire"));
+			psmt.setString(4, (String) map.get("job"));
+			psmt.setString(5, (String) map.get("last"));
+			int r = psmt.executeUpdate(); //insert, update, delete
 			
-		}catch(Exception e) {
+			return r; //처리된 건수 반환(1건)
+			
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		return result;
+		return 0;
+		
 	}
 	
 	

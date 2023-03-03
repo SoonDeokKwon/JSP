@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="main.do"></jsp:forward>
+	<!-- http://localhost8080/HelloWeb/main.do -->
 	<p>main.jsp</p>
-	<a href="memberlist.do">회원목록</a>
 </body>
 </html>

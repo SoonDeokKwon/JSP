@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="main.do"></jsp:forward>
-	<p>main.jsp</p>
-	<a href="memberlist.do">회원목록</a>
+	<p>member.jsp</p>
 </body>
 </html>
