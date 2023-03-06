@@ -1,14 +1,9 @@
 <%@page import="co.dev.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원조회</title>
-</head>
-<body>
-	<h3>회원수정조회(memberUpdateForm.jsp)</h3>
+    
+    <%@ include file="../includes/sidebar.jsp" %>
+    <%@ include file="../includes/top.jsp" %>
 	
 	<%
 	  MemberVO member = (MemberVO) request.getAttribute("vo");
@@ -41,5 +36,4 @@
 	}
 	%>
 	
-</body>
-</html>
+    <%@ include file="../includes/footer.jsp" %>

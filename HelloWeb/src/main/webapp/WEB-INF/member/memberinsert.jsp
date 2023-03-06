@@ -1,19 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원정보 등록</title>
-</head>
-<body>
+    
+  <%@ include file="../includes/sidebar.jsp" %>
+  <%@ include file="../includes/top.jsp" %>
+
 	<h3>회원가입</h3>
 	<form action="memberInsert.do" method="post">
-		ID: <input type = "text" name="id"><br>
-		PW:<input type = "password" name="pass"><br>
-		Name:<input type = "text" name="name"><br>
-		Mail:<input type = "email" name="mail"><br>
-		<input type="submit">
+		<table class="table">
+		    <tr><td>ID:</td><td><input type="text" name="id"></td></tr>
+		    <tr><td>PW:</td><td><input type="password" name="pass"></td></tr>
+		    <tr><td>Name:</td><td><input type="text" name="name"></td></tr>
+		    <tr><td>Mail:</td><td><input type="email" name="mail"></td></tr>
+		    <tr><td colspan="2" align="center"><input type="submit" class="btn btn-primary"></td></tr>
+   		</table>
 	</form>
-</body>
-</html>
+	
+<%@ include file="../includes/footer.jsp" %>

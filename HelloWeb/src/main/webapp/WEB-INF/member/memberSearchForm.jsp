@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원조회</title>
-</head>
-<body>
+
+    <%@ include file="../includes/sidebar.jsp" %>
+    <%@ include file="../includes/top.jsp" %>
+
 	<h3>회원조회(memberSearchForm.jsp)</h3>
 	
 	<%
@@ -23,5 +20,5 @@
 		찾을 ID: <input type="text" name ="id">
 		<input type="submit" value="찾기">
 	</form>
-</body>
-</html>
+
+    <%@ include file="../includes/footer.jsp" %>
