@@ -10,18 +10,33 @@
 </head>
 <body>
 	<%
-	//자바 영역.
-		List<MemberVO> list = (List<MemberVO>) request.getAttribute("members");  //list가 가지고 있는 주소값을 반환.
+	// 자바 영역.
+		List<MemberVO> list = (List<MemberVO>) request.getAttribute("members"); // list 주소값.
 		System.out.print(list);
 	%>
+	<table border="1">
+		<thead>
+			<th>회원 ID</th>
+			<th>회원 이름</th>
+		</thead>
+		<tbody>
 	<%
-		for (MemberVO member : list){
-			
+	    for (MemberVO member : list) {
 	%>
-		<li> id: <%=member.getId() %>, name: <%=member.getName() %></li>
+	    <tr>
+	    	<td>id: <%=member.getId() %></td>
+	    	<td>name: <%=member.getName() %></td>
+	    	<td>email: <%=member.getMail() %></td>
+	    	
+	    </tr> 
 	<%
-		}
+	    }
 	%>
+		</tbody>
+	</table>
+	
+	<p>회원등록 페이지 이동</p>
+	<a href="memberInsertForm.do">회원등록페이지</a>
 	
 </body>
 </html>
