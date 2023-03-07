@@ -77,6 +77,7 @@ public class FrontController extends HttpServlet {
 		//공지사항 등록 처리
 		map.put("/noticeAdd.do", new NoticeAddControl());
 		//공지사항 상세조회
+		//getNotice(nid), selectNotice(nid)
 		map.put("/noticeSearch.do", new NoticeSearchControl());
 		
 		

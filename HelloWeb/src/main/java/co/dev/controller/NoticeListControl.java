@@ -24,6 +24,7 @@ public class NoticeListControl implements Control {
 			page = "1";
 		}
 		
+		// 글목록. mybatis활용 목록.
 		NoticeService service = new NoticeServiceMybatis();
 		List<NoticeVO> list = service.noticeList(Integer.parseInt(page)); // 공지사항 목록.
 		

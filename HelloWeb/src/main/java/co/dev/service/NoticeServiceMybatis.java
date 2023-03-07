@@ -18,8 +18,8 @@ public class NoticeServiceMybatis implements NoticeService{
 	
 	@Override
 	public List<NoticeVO> noticeList(int page) { // 목록.
-		return mapper.noticeList();
-	}
+		// return mapper.noticeList();
+		return mapper.noticeWithPaging(page);	}
 
 	@Override
 	public boolean addNotice(NoticeVO vo) { // 등록.

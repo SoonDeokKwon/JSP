@@ -6,9 +6,8 @@ import co.dev.vo.NoticeVO;
 
 public interface NoticeMapper {
 	// 목록.	
-	public List<NoticeVO> noticeList();
-	
-	public List<NoticeVO> noticeWithPaging(int page);
+	public List<NoticeVO> noticeList();	
+	public List<NoticeVO> noticeWithPaging(int page); //페이징
 	
 	//등록
 	public int insertNotice(NoticeVO vo);
