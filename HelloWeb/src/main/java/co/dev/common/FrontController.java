@@ -20,6 +20,10 @@ import co.dev.controller.MemberSearchControl;
 import co.dev.controller.MemberSearchFormControl;
 import co.dev.controller.MemberUpdateFromConrol;
 import co.dev.controller.MemberUpdateOutputControl;
+import co.dev.controller.NoticeAddControl;
+import co.dev.controller.NoticeFormControl;
+import co.dev.controller.NoticeListControl;
+import co.dev.controller.NoticeSearchControl;
 
 public class FrontController extends HttpServlet {
 	// url 패텅과 실행 컨ㅌ롤러 등록.
@@ -63,6 +67,21 @@ public class FrontController extends HttpServlet {
 		
 		// 사원목록.
 //		map.put("/empList.do", new EmpListControl()); //결과페이지: member/empList.jsp
+		
+		
+		//공지사항 관련 작업 시작
+		//공지사항 목록
+		map.put("/noticeList.do", new NoticeListControl());
+		//공지사항 등록 화면
+		map.put("/noticeWriteForm.do", new NoticeFormControl());
+		//공지사항 등록 처리
+		map.put("/noticeAdd.do", new NoticeAddControl());
+		//공지사항 상세조회
+		map.put("/noticeSearch.do", new NoticeSearchControl());
+		
+		
+		
+		
 		
 	}
 	
