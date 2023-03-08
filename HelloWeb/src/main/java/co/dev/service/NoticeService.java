@@ -17,5 +17,10 @@ public interface NoticeService {
 	
 	public NoticeVO getNotice(int nid);
 	
+	//페이지 전체 건수를 가져오기
+	public int getTotalCount();
+	
+	//공지사항 게시글 수정
+	public boolean noticeModify(NoticeVO vo);
 	
 }

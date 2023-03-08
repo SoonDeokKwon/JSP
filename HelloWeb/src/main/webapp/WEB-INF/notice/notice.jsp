@@ -6,6 +6,8 @@
     
     <%
     	NoticeVO vo = (NoticeVO) request.getAttribute("noitce");
+    	System.out.print(vo);
+    	String name = (String) session.getAttribute("name");
     %>
     
     	<table class="table">
@@ -24,7 +26,7 @@
     		</tr>
     		<tr>
     			<td>내용</td>
-    			<td colspan=2><textarea cols="30" rows="5" name="subject" value="<%=vo.getNoticeSubject() %>"></textarea></td>
+    			<td colspan=2><textarea cols="30" rows="5" name="subject" ><%=vo.getNoticeSubject() %></textarea></td>
     		</tr>
     		<tr>
     			<td>파일</td>
@@ -37,12 +39,58 @@
     			</td>
     		</tr>
     		<tr>
-				<td colspan="2" align="center">
-					<input type="submit" value="저장"> 
+				<td colspan="3" align="center">
+					<button id="modBtn">수정</button>
+					<button id="delBtn">삭제</button>
 				</td>
     		</tr>
     	</table>
-   
-    
+   	<form id="myFrm" action="noticeModify.do">
+
+	</form>
+   	<script>
+   		document.querySelector('#modBtn').addEventListener('click', function(e) {
+   			e.preventDefault(); //기본 기능 차단.
+			let myFrm = document.querySelector('#myFrm');
+			let nid = document.querySelector('input[name="nid"]').value;
+			let title = document.querySelector('input[name="title"]').value;
+			let subject = document.querySelector('textarea[name="subject"]').textContent;
+
+			myFrm.append(document.querySelector('input[name="nid"]'));
+			myFrm.append(document.querySelector('input[name="title"]'));
+			myFrm.append(document.querySelector('textarea[name="subject"]'));
+			console.log(myFrm);
+			myFrm.submit();
+			
+			let isOK = true;
+			if (id != <%=vo.getNoticeId()%>){
+				isOK = false;
+			}
+			if(!isOK){
+				alert('작성자만 수정할 수 있습니다!');
+				return false;
+			}
+			this.submit();
+
+			
+
+		});
+
+		// 삭제.
+		document.querySelector('#delBtn').addEventListener('click', function(){
+			
+			let myFrm = document.querySelector('#myFrm');
+			// FrontContrller에 NoticeRemoveControl();
+			// 서비스: noticeRemove(int nid), mapper: deleteNotice(int nid);
+
+			myFrm.action = 'noticeRemove.do'; // myFrm.setAttribute('action', 'noticeRemove.do')
+			myFrm.append(document.querySelector('input[name="nid"]'));
+
+			myFrm.submit();
+		})
+
+   	</script>
+
+    	
     
     <%@ include file="../includes/footer.jsp" %>

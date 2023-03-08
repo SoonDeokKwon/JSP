@@ -18,4 +18,10 @@ public interface NoticeMapper {
 	//조회수 증가
 	public int updateCount(int nid);
 	
+	//페이지 전체 건수를 가져오기
+	public int getTotalCount();
+	
+	//공지사항 게시글 수정
+	public int updateNotice(NoticeVO vo);
+	
 }

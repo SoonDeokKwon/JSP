@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.dev.controller.LoginFormControl;
+import co.dev.controller.LogoutControl;
 import co.dev.controller.MainControl;
 import co.dev.controller.MeberInsertControl;
 import co.dev.controller.MemberDeleteControl;
@@ -23,6 +25,7 @@ import co.dev.controller.MemberUpdateOutputControl;
 import co.dev.controller.NoticeAddControl;
 import co.dev.controller.NoticeFormControl;
 import co.dev.controller.NoticeListControl;
+import co.dev.controller.NoticeModifyControl;
 import co.dev.controller.NoticeSearchControl;
 
 public class FrontController extends HttpServlet {
@@ -37,6 +40,8 @@ public class FrontController extends HttpServlet {
 		
 		map.put("/main.do", new MainControl());
 		map.put("/login.do", new LoginControl());
+		map.put("/loginForm.do", new LoginFormControl());
+		map.put("/logout.do", new LogoutControl());
 		// 회원목록.
 		map.put("/memberList.do", new MemberListControl());
 		
@@ -80,7 +85,7 @@ public class FrontController extends HttpServlet {
 		//getNotice(nid), selectNotice(nid)
 		map.put("/noticeSearch.do", new NoticeSearchControl());
 		
-		
+		map.put("/noticeModify.do", new NoticeModifyControl());
 		
 		
 		

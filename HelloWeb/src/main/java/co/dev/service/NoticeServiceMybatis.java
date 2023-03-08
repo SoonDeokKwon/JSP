@@ -42,4 +42,16 @@ public class NoticeServiceMybatis implements NoticeService{
 		return null;
 	}
 
+	@Override
+	public int getTotalCount() {
+		return mapper.getTotalCount();
+	}
+
+	@Override
+	public boolean noticeModify(NoticeVO vo) {
+		System.out.println("vo:"+vo);
+		int r = mapper.updateNotice(vo);
+		return r == 1;
+	}
+
 }

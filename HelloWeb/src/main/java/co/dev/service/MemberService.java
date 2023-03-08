@@ -19,4 +19,7 @@ public interface MemberService {
 	
 	// 회원삭제.
 	public boolean removeMember(String id);
+	
+	//
+	public MemberVO login(MemberVO vo);
 }
