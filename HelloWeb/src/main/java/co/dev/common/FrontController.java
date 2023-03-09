@@ -23,6 +23,7 @@ import co.dev.controller.MemberSearchFormControl;
 import co.dev.controller.MemberUpdateFromConrol;
 import co.dev.controller.MemberUpdateOutputControl;
 import co.dev.controller.NoticeAddControl;
+import co.dev.controller.NoticeDeleteControl;
 import co.dev.controller.NoticeFormControl;
 import co.dev.controller.NoticeListControl;
 import co.dev.controller.NoticeModifyControl;
@@ -87,6 +88,7 @@ public class FrontController extends HttpServlet {
 		
 		map.put("/noticeModify.do", new NoticeModifyControl());
 		
+		map.put("/noticeRemove.do", new NoticeDeleteControl());
 		
 		
 	}

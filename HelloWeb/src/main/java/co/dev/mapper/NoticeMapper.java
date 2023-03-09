@@ -24,4 +24,7 @@ public interface NoticeMapper {
 	//공지사항 게시글 수정
 	public int updateNotice(NoticeVO vo);
 	
+	// 삭제.
+	public boolean deleteNotice(int nid);
+	
 }

@@ -11,7 +11,7 @@
   
   <select id="noticeWithPaging" resultType="co.dev.vo.NoticeVO" parameterType="int">
   	  <![CDATA[
-  	  SELECT notice_id, notice_writer, notice_title, to_char(create_date, 'YYYY.MM.DD HH24:MI')
+  	  SELECT notice_id, notice_writer, notice_title,  create_date
       FROM(select ROWNUM rn, notice_id, notice_writer, notice_title, create_date
            FROM (SELECT ROWNUM rn, notice_id, notice_writer, notice_title, create_date
                  FROM notice 
@@ -44,6 +44,11 @@
   	UPDATE notice 
 	SET notice_title = #{noticeTitle}, notice_subject= #{noticeSubject}
 	WHERE notice_id = #{noticeId}
+  </update>
+  
+  <update id="deleteNotice" parameterType="co.dev.vo.NoticeVO">
+  	delete from notice
+	where notice_id =  #{noticeId}
   </update>
   
   

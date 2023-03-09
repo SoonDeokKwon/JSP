@@ -1,9 +1,13 @@
 <%@page import="co.dev.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
     <%@ include file="../includes/sidebar.jsp" %>
     <%@ include file="../includes/top.jsp" %>
+	
+
 	
 	<%
 	  MemberVO member = (MemberVO) request.getAttribute("vo");
